@@ -22,12 +22,9 @@ import checkout from './screens/checkout';
 
 import Cart from './screens/Cart';
 import ThermoScreen from './screens/ThermoScreen';
-
-
-
-
-
-
+import MainScreen from './screens/MainScreen';
+import IndexScreen from './screens/IndexScreen';
+import surgicalScreen from './screens/surgicalScreen';
 
 
 const Stack = createStackNavigator();
@@ -35,7 +32,7 @@ const App=()=> {
 
   return (
  <NavigationContainer>
-    <Stack.Navigator>
+     <Stack.Navigator>
     
           <Stack.Screen name="WelcomeScreen" 
           component={WelcomeScreen}
@@ -43,15 +40,21 @@ const App=()=> {
             {headerShown:false}
           }
            />
+          <Stack.Screen name="IndexScreen" 
+          component={IndexScreen}
+          options={
+            {headerShown:false}
+          }
+           />
         
-          <Stack.Screen name="Signup..." 
+          <Stack.Screen name="SignupScreen" 
           component={SignupScreen}
           options={
             {title:'Signup...'},
             {headerShown: false}
         
           } /> 
-          <Stack.Screen name="Login here...." 
+          <Stack.Screen name="LoginScreen" 
         component={LoginScreen}
         options={
           {title:'Login here....'},
@@ -59,13 +62,13 @@ const App=()=> {
         } />
 
    
-        <Stack.Screen name="LoadingScreen" 
-        component={LoadingScreen} 
-          options={
-            {headerShown:false}
-          }
-           />
-           <Stack.Screen name="SearchScreen"
+        {/* // <Stack.Screen name="LoadingScreen" 
+        // component={LoadingScreen} 
+        //   options={
+        //     {headerShown:false}
+        //   }
+        //    /> */}
+        <Stack.Screen name="SearchScreen"
            component={SearchScreen}
            options={
              {headerShown:false}
@@ -97,9 +100,16 @@ const App=()=> {
           options={
             {headerShown:false}
           }
+           /> 
+           
+    <Stack.Screen name="MainScreen" 
+        component={MainScreen} 
+          options={
+            {headerShown:false}
+          }
            />
        
-       <Stack.Screen name="AddScreen" 
+        <Stack.Screen name="AddScreen" 
         component={AddScreen} 
           options={
             {headerShown:false}
@@ -118,9 +128,15 @@ const App=()=> {
           options={
             {headerShown:false}
           }
-           />
+           /> 
 
-
+            
+<Stack.Screen name="surgicalScreen" 
+        component={surgicalScreen} 
+          options={
+            {headerShown:false}
+          }
+           /> 
 
 
       </Stack.Navigator>

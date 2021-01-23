@@ -37,18 +37,28 @@ export default class ThermoScreen extends Component{
 
   render() {
     var left = (
-      <Left style={{flex:1}}>
+      <Left style={{flex:1, flexDirection:"row"}}>
         <Button  transparent>
-          <Icon name='ios-arrow-back' />
+          <Icon name='ios-arrow-back' style={{color:"#00bfff"}} onPress={() =>
+                            this.props.navigation.navigate("AirScreen")
+                          } />
         </Button>
+        <View style={{flexDirection:"row"}}>
+        <Image source={require('../assets/logo.jpg')} style={{width:65,height:25,marginTop:10}} />
+        
+        </View>
       </Left>
     );
+
     var right = (
       <Right style={{flex:1}}>
+
         <Button  transparent>
-          <Icon name='ios-search-outline' />
+          <Icon name='ios-search-outline' style={{color:"#00bfff"}} />
         </Button>
-      
+      <Button  transparent>
+          <Icon name='ios-cart' style={{color:"#00bfff"}} onPress={() => this.props.navigation.navigate("CartScreen")}/>
+        </Button>
       </Right>
     );
     return(

@@ -14,9 +14,9 @@ import { items } from "../src/context/data";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
   export default class Search extends React.Component {
-    static navigationOptions = {
-      header: null,
-    };
+   // static navigationOptions = {
+     // header: null,
+    //};
   
     state = {
       items: [],
@@ -38,7 +38,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
     };
   
     _executeSearch = val => {
-      this.props.navigation.navigate("LoadingScreen", {
+      this.props.navigation.navigate("MainScreen", {
         searchedValue: val,
       });
     };
@@ -81,19 +81,24 @@ import { TouchableOpacity } from "react-native-gesture-handler";
                       >
                         <TouchableOpacity
                           onPress={() =>
-                            this.props.navigation.navigate("ItemDetails", {
+                            this.props.navigation.navigate("ThermoScreen", {
                               item,
                             })
                           }
                         >
-                          <Text style={{ paddingHorizontal: 15 }}>
-                            {item.name}
+                           
+
+                          <Text style={{ paddingHorizontal: 15 }} >
+                            {item.name} 
                           </Text>
 
                           <Text style={{ paddingHorizontal: 15 }}>
                            $ {item.price}
                           </Text>
                         </TouchableOpacity>
+
+                        
+                             
                       </View>
                     );
                   }

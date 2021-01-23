@@ -10,25 +10,25 @@ const [name,setName] = useState('');
 const [email,setEmail] = useState('');
 const [password,setPassword] = useState('');
 const[phoneNumber,setPhonenumber] = useState('');
-sendCred= ()=>{
-    fetch("http://192.168.1.6:3000/api/signup",{
-        method:'POST',
-        headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            "name":name,
-            "email":email,
-            "phoneNumber":phoneNumber,
-            "password":password
-        })
-        })
-    .then(res=>res.json())
-    .then (data=>{
-        console.log(data)
-    })
-}
+// sendCred= ()=>{
+//     fetch("http://192.168.1.6:3000/api/signup",{
+//         method:'POST',
+//         headers:{
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({
+//             "name":name,
+//             "email":email,
+//             "phoneNumber":phoneNumber,
+//             "password":password
+//         })
+//         })
+//     .then(res=>res.json())
+//     .then (data=>{
+//         console.log(data)
+//     })
+//}
   return (
     <KeyboardAvoidingView behavior="position">
     <View style={styles.container}>
@@ -65,7 +65,7 @@ sendCred= ()=>{
       onChangeText={(text)=>setPassword(text)}/>
       
       <View  style={styles.Button}>
-        <Button  mode="contained" onPress={()=>props.navigation.navigate("AddScreen")}color="#00bfff" width={200}>Signup</Button>
+        <Button  mode="contained" onPress={()=>props.navigation.navigate("LoginScreen")}color="#00bfff" width={200}>Signup</Button>
           </View>
           
           </View>

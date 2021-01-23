@@ -9,7 +9,7 @@ import SideMenuDrawer from '../src/components/SideMenuDrawer';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-const AirScreen=(props)=> {
+const surgicalScreen=(props)=> {
   return(
     <View style={{flex:1}}>
       <View style={{ height: 75, justifyContent:'center',paddingHorizontal: 5,backgroundColor:"white"}}>
@@ -32,14 +32,14 @@ const AirScreen=(props)=> {
       </View>
       <ScrollView>
       <View style={{ flexDirection: 'row' }}>
-          <Image source={require('../assets/thermometer.jpg')} style={styles.indo} >
+          <Image source={require('../assets/wound.jpg')} style={styles.indo} >
           </Image>
-          <Image source={require('../assets/pen_knifes.jpeg')} style={styles.Image} >
+          <Image source={require('../assets/scalpel.jpg')} style={styles.Image} >
           </Image>
         </View>
         <View style={{ flexDirection: 'row' }}>
-          <Text style={styles.anthurium} onPress={() => props.navigation.navigate("ThermoScreen")}>Thermometer</Text>
-          <Text style={styles.golden}>Pen Knife</Text>
+          <Text style={styles.anthurium} onPress={() => props.navigation.navigate("ThermoScreen")}>Wound Retractors</Text>
+          <Text style={styles.golden}>Scalpel</Text>
         </View>
   
 
@@ -49,13 +49,13 @@ const AirScreen=(props)=> {
   </View>
 
   <View style={{ flexDirection: 'row' }}>
-          <Image source={require('../assets/sthethescope.jpg')} style={styles.indo} >
+          <Image source={require('../assets/straightvesselclips.jpg')} style={styles.indo} >
           </Image>
           <Image source={require('../assets/artery_foreceps.jpg')} style={styles.Image} >
           </Image>
         </View>
         <View style={{ flexDirection: 'row' }}>
-          <Text style={styles.anthurium}>Sthethescope</Text>
+          <Text style={styles.anthurium}>Straight vessel clips</Text>
           <Text style={styles.golden} onPress={() => navigation.navigate("medicalScreen")}>Artery Foreceps </Text>
         </View>
   <View style={{flexDirection:'row'}}>
@@ -65,14 +65,14 @@ const AirScreen=(props)=> {
 
 
   <View style={{ flexDirection: 'row' }}>
-          <Image source={require('../assets/KN95_mask.jpeg')} style={styles.indo} >
+          <Image source={require('../assets/bulldog.jpg')} style={styles.indo} >
           </Image>
-          <Image source={require('../assets/surgical_gloves.jpg')} style={styles.Image} >
+          <Image source={require('../assets/haemostatic-forceps.jpeg')} style={styles.Image} >
           </Image>
         </View>
         <View style={{ flexDirection: 'row' }}>
-          <Text style={styles.anthurium} >KN95 Mask</Text>
-          <Text style={styles.golden}>Surgical Gloves</Text>
+          <Text style={styles.anthurium} >Bulldog Clamps</Text>
+          <Text style={styles.golden}>Haemostatic forceps</Text>
         </View>
   <View style={{flexDirection:'row'}}>
   <Text style={styles.cashindoor}>$ 200</Text>
@@ -80,20 +80,24 @@ const AirScreen=(props)=> {
   </View>
   
   <View style={{ flexDirection: 'row' }}>
-          <Image source={require('../assets/walking_crutches.jpg')} style={styles.indo} >
+          <Image source={require('../assets/organ.jpg')} style={styles.indo} >
           </Image>
-          <Image source={require('../assets/bp_monitor.jpg')} style={styles.Image} >
+          <Image source={require('../assets/surgical.jpg')} style={styles.Image} >
           </Image>
         </View>
         <View style={{ flexDirection: 'row' }}>
-          <Text style={styles.anthurium}>Walking Crutches</Text>
-          <Text style={styles.golden}>Blood Pressure Monitor</Text>
+          <Text style={styles.anthurium}>Organ and Tissue Grasping Forceps</Text>
+          <Text style={styles.golden}>Surgical Needles</Text>
         </View>
         <View style={{ flexDirection: 'row' }}>
-          <Image source={require('../assets/wheel_chair.jpg')} style={styles.indo} >
+          <Image source={require('../assets/abdom.jpg')} style={styles.indo} >
           </Image>
-          <Image source={require('../assets/microscope.jpg')} style={styles.Image} >
+          <Image source={require('../assets/scissors.jpg')} style={styles.Image} >
           </Image>
+        </View>
+        <View style={{ flexDirection: 'row' }}>
+          <Text style={styles.anthurium}>Abdominal Retractors</Text>
+          <Text style={styles.golden}>Scissors</Text>
         </View>
   <View style={{flexDirection:'row'}}>
   <Text style={styles.cashindoor}>$ 270</Text>
@@ -107,7 +111,7 @@ const AirScreen=(props)=> {
 
 }
  
-export default AirScreen;
+export default surgicalScreen;
 
 const styles = StyleSheet.create({
   

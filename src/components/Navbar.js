@@ -9,7 +9,7 @@ export default class Navbar extends Component {
     return(
       <Header
         style={{backgroundColor: "#00bfff"}}
-        backgroundColor="#00bfff"
+        backgroundColor="white"
         androidStatusBarColor="#00bfff"
         noShadow={true}
         >
@@ -30,7 +30,7 @@ const styles={
     alignItems: 'center'
   },
   title: {
-    
+    color:"#00bfff",
     fontWeight: '100'
   }
 };

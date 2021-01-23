@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
+
+  import React, { Component } from 'react';
 import { Alert,Text, AsyncStorage } from 'react-native';
 import { Container, Content, View, Header, Icon, Button, Left, Right, Body, Title, List, ListItem, Thumbnail, Grid, Col } from 'native-base';
 import { Actions } from 'react-native-router-flux';
+
 
 // Our custom files and classes import
 //import Colors from '../Colors';
 //import Text from '../component/Text';
 import Navbar from '../src/components/Navbar';
-import { LogBox } from 'react-native';
-LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
-LogBox.ignoreAllLogs();
 
 
-export default class Cart extends Component{
+export default class Cart extends React.Component{
+ 
   constructor(props) {
       super(props);
       this.state = {
         cartItems: []
       };
   }
-
+ 
   componentWillMount() {
     AsyncStorage.getItem("CART", (err, res) => {
       if (!res) this.setState({cartItems: []});
@@ -27,7 +27,10 @@ export default class Cart extends Component{
     });
   }
 
+  
+
   render() {
+    const { navigation } = this.props;
     var left = (
       <Left style={{flex:1}}>
         <Button transparent >
@@ -35,6 +38,7 @@ export default class Cart extends Component{
         </Button>
       </Left>
     );
+    
     return(
       <Container style={{backgroundColor: '#fdfdfd'}}>
           <Navbar left={left} title="MY CART" />
@@ -50,13 +54,13 @@ export default class Cart extends Component{
               </List>
               <Grid style={{marginTop: 20, marginBottom: 10}}>
                 <Col style={{paddingLeft: 10,paddingRight: 5}}>
-                  <Button  style={{backgroundColor: "#00bfff"}} onPress={()=> this.checkout()} block iconLeft>
+                  <Button onPress={() => this.props.navigation.navigate("Login here....")} style={{backgroundColor: "#00bfff"}} block iconLeft>
                     <Icon name='ios-card' />
                     <Text style={{color: '#fdfdfd'}}>Checkout</Text>
                   </Button>
                 </Col>
                 <Col style={{paddingLeft: 5, paddingRight: 10}}>
-                  <Button onPress={() => this.removeAllPressed()} style={{borderWidth: 1, borderColor:"00bfff"}} 
+                  <Button onPress={() => this.removeAllPressed()} style={{borderWidth: 1, borderColor:"#00bfff"}} 
                   block iconRight transparent>
                     <Text style={{color: "#00bfff"}}>Emtpy Cart</Text>
                     <Icon style={{color: "#00bfff"}} name='ios-trash-outline' />
@@ -81,13 +85,9 @@ export default class Cart extends Component{
           <Thumbnail square style={{width: 110, height: 90}} />
           <Body style={{paddingLeft: 10}}>
             <Text style={{fontSize: 18}}>
-           
+              {item.quantity > 1 ? item.quantity+"x " : null}
               {item.title}
-              </Text>
-              <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>
-              Quantity:  {item.quantity > 1 ? item.quantity : null}
-              </Text>
-            
+            </Text>
             <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>{item.price}</Text>
             
             
@@ -140,18 +140,6 @@ export default class Cart extends Component{
     AsyncStorage.setItem("CART",JSON.stringify([]));
   }
 
-  
-  checkout() {
-    Alert.alert(
-      'Checkout ',
-      'We will send order details to your Email id',
-      [
-        {text: 'ok', onPress: () => console.log('No Pressed'), style: 'cancel'}
-        //{text: 'Yes', onPress: () => console.log('success'), style: 'cancel'}
-      ]
-    )
-  }
-
   //checkout() {
 	//Actions.checkout({cartItems: this.state.cartItems});
 	
@@ -173,4 +161,3 @@ const styles={
     fontWeight: '100'
   }
 };
-

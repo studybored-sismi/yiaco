@@ -127,11 +127,11 @@ import { Button, TextInput} from 'react-native-paper';
       value={password}
       mode="outlined" 
       label="Password" 
-      theme={{colors:{primary:"green"}}}
+      theme={{colors:{primary:"#00bffff"}}}
       onChangeText={(text)=>setPassword(text)}/>
       
       <View  style={styles.Button}>
-        <Button  mode="contained" onPress={onSubmit}  color="green" width={200}>LOGIN</Button>
+        <Button  mode="contained" onPress={()=>props.navigation.navigate("AddScreen")}  color="#00bfff" width={200}>LOGIN</Button>
           </View>
           <Text style={styles.forgott} onPress={() =>props.navigation.navigate("Signup...")}>Click here to Signup</Text>
           </View>
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
       justifyContent:"center",
       fontSize:35,
       fontWeight:"700",
-      color:"green"
+      color:"#00bfff"
     },
     create:{
       paddingLeft:105,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
       fontSize:15,
       paddingTop:5,
       paddingBottom:5,
-      color:"green"
+      color:"#00bfff"
     },
     Button:{
       

@@ -12,13 +12,17 @@ import LoginScreen from './screens/LoginScreen';
 import LoadingScreen from './screens/LoadingScreen';
 import SearchScreen from './screens/SearchScreen';
 import medicalScreen from './screens/medicalScreen';
-
+import AddScreen from './screens/AddScreen';
 import CartScreen from './screens/CartScreen';
-
+//import ProductDetails from './screens/ProductDetails';
 
 import AirScreen from './screens/AirScreen';
-
+//import AddressScreen from './screens/AddressScreen';
 import checkout from './screens/checkout';
+
+import Cart from './screens/Cart';
+import ThermoScreen from './screens/ThermoScreen';
+
 
 
 
@@ -80,7 +84,12 @@ const App=()=> {
           }
            />
 
-    
+<Stack.Screen name="ThermoScreen" 
+        component={ThermoScreen} 
+          options={
+            {headerShown:false}
+          }
+           />
      
 
     <Stack.Screen name="AirScreen" 
@@ -89,8 +98,20 @@ const App=()=> {
             {headerShown:false}
           }
            />
-
-
+       
+       <Stack.Screen name="AddScreen" 
+        component={AddScreen} 
+          options={
+            {headerShown:false}
+          }
+           />
+        <Stack.Screen name="Cart" 
+        component={Cart} 
+          options={
+            {headerShown:false}
+          }
+           />
+      
 
 <Stack.Screen name="checkout" 
         component={checkout} 

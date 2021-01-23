@@ -38,14 +38,14 @@ sendCred= ()=>{
        mode="outlined"
        value={name}
        label="Name"
-       theme={{colors:{primary:"green"}}}
+       theme={{colors:{primary:"#00bfff"}}}
        onChangeText={(text)=>setName(text)}/>
 
       <TextInput style={styles.input}
        mode="outlined"
        value={email}
        label="Email" 
-       theme={{colors:{primary:"green"}}}
+       theme={{colors:{primary:"#00bfff"}}}
        onChangeText={(text)=>setEmail(text)}/>
 
     <TextInput style={styles.input}
@@ -53,7 +53,7 @@ sendCred= ()=>{
        value={phoneNumber}
        keyboardType="number-pad"
        label="Phone number" 
-       theme={{colors:{primary:"green"}}}
+       theme={{colors:{primary:"#00bfff"}}}
        onChangeText={(text)=>setPhonenumber(text)}/>
       
       <TextInput style={styles.input} 
@@ -61,11 +61,11 @@ sendCred= ()=>{
       mode="outlined"
       value={password} 
       label="Password"
-      theme={{colors:{primary:"green"}}}
+      theme={{colors:{primary:"#00bfff"}}}
       onChangeText={(text)=>setPassword(text)}/>
       
       <View  style={styles.Button}>
-        <Button  mode="contained" onPress={()=>sendCred()}color="green" width={200}>Signup</Button>
+        <Button  mode="contained" onPress={()=>props.navigation.navigate("AddScreen")}color="#00bfff" width={200}>Signup</Button>
           </View>
           
           </View>
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
       justifyContent:"center",
       fontSize:35,
       fontWeight:"700",
-      color:"green"
+      color:"#00bfff"
     },
     create:{
       paddingLeft:105,
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
       fontSize:15,
       paddingTop:5,
       paddingBottom:5,
-      color:"green"
+      color:"#00bfff"
     },
     Button:{
       

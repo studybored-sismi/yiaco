@@ -13,7 +13,7 @@
             <View style={styles.button} >
               <Button
                 style={styles.Button}
-                onPress={() => props.navigation.navigate("MainScreen")} mode="contained" > GET STARTED</Button>
+                onPress={() => props.navigation.navigate("productScreen")} mode="contained" > GET STARTED</Button>
             </View>
           </View>
           <Text color="white"></Text>

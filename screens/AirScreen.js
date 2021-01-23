@@ -56,7 +56,7 @@ const AirScreen=(props)=> {
         </View>
         <View style={{ flexDirection: 'row' }}>
           <Text style={styles.anthurium}>Sthethescope</Text>
-          <Text style={styles.golden} onPress={() => navigation.navigate("medicalScreen")}>Artery Foreceps </Text>
+          <Text style={styles.golden} onPress={() => props.navigation.navigate("medicScreen")}>Artery Foreceps </Text>
         </View>
   <View style={{flexDirection:'row'}}>
   <Text style={styles.cashindoor}>$ 275</Text>

@@ -25,7 +25,8 @@ import ThermoScreen from './screens/ThermoScreen';
 import MainScreen from './screens/MainScreen';
 import IndexScreen from './screens/IndexScreen';
 import surgicalScreen from './screens/surgicalScreen';
-
+import medicScreen from './screens/medicScreen';
+import productScreen from './screens/productScreen';
 
 const Stack = createStackNavigator();
 const App=()=> {
@@ -138,7 +139,19 @@ const App=()=> {
           }
            /> 
 
+<Stack.Screen name="medicScreen" 
+          component={medicScreen}
+          options={
+            {headerShown:false}
+          }
+           />
 
+<Stack.Screen name="productScreen" 
+          component={productScreen}
+          options={
+            {headerShown:false}
+          }
+           />
       </Stack.Navigator>
  </NavigationContainer>
   );

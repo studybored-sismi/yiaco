@@ -113,7 +113,7 @@ export default class checkout extends Component{
               </Col>
               <Col size={3}>
                 <View style={{flex: 1, flexDirection: 'row'}}>
-                  <Button style={{flex: 1}} icon light onPress={() => this.setState({quantity: this.state.quantity>1 ? this.state.quantity-1 : 1})} >
+                  <Button style={{flex: 1}} icon light onPress={() => this.setState({quantity: this.state.quantity>0 ? this.state.quantity-1 : 1})} >
                     <Icon name='ios-remove-outline' />
                   </Button>
                   <View 

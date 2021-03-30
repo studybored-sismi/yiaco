@@ -8,9 +8,9 @@ export default class Navbar extends Component {
   render() {
     return(
       <Header
-        style={{backgroundColor: "#00bfff"}}
-        backgroundColor="white"
-        androidStatusBarColor="#00bfff"
+        style={{backgroundColor: "green"}}
+        backgroundColor="green"
+        androidStatusBarColor="green"
         noShadow={true}
         >
         {this.props.left ? this.props.left : <Left style={{flex: 1}} />}
@@ -30,7 +30,9 @@ const styles={
     alignItems: 'center'
   },
   title: {
-    color:"#00bfff",
-    fontWeight: '100'
+    color:"white",
+    fontWeight: '200',
+    fontSize:20,
+    paddingLeft:0
   }
 };

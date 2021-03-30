@@ -8,15 +8,15 @@ import {
   TextInput,
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-//import Header from "../src/components/Header";
+import Header from "../src/components/header";
 import SearchBar from "../src/components/SearchBar";
 import { items } from "../src/context/data";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
   export default class Search extends React.Component {
-   // static navigationOptions = {
-     // header: null,
-    //};
+    static navigationOptions = {
+      header: null,
+    };
   
     state = {
       items: [],
@@ -27,7 +27,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
     }
   
     componentWillMount() {
-      this.startHeaderHeight = 30;
+      this.startHeaderHeight = 20;
       if (Platform.OS === "android") {
         this.startHeaderHeight = 70 + StatusBar.currentHeight;
       }
@@ -46,13 +46,20 @@ import { TouchableOpacity } from "react-native-gesture-handler";
     render() {
       const { searchedItem, items } = this.state;
       return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: "white" ,paddingTop:1,paddingBottom:170}}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: "white" ,paddingTop:1,paddingBottom:200}}>
           <View style={{ flex: 1 ,backgroundColor:"white"}}>
+          <Header
+            backgroundColor={this.props.headerBackgroundColor}
+            tintColor={this.props.headerTintColor}
+            backButton={Platform.OS === "android"}
+          >
            
               <SearchBar
+                
                 onChangeQuery={this.searchQuery}
                 onSubmit={this._executeSearch}
                 placeholderTextColor={this.props.searchInputPlaceholderTextColor}
+  
                 textColor={this.props.searchInputTextColor}
                 selectionColor={this.props.searchInputSelectionColor}
                 underlineColorAndroid={
@@ -63,7 +70,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
                   this.props.searchInputTintColor || this.props.headerTintColor
                 }
               />
-          
+           </Header>
             <View style={{ flex: 1 }}>
               {searchedItem !== "" &&
                 items.map(item => {
@@ -81,13 +88,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
                       >
                         <TouchableOpacity
                           onPress={() =>
-                            this.props.navigation.navigate("ThermoScreen", {
+                            this.props.navigation.navigate("indoorScreen", {
                               item,
                             })
                           }
                         >
-                           
-
                           <Text style={{ paddingHorizontal: 15 }} >
                             {item.name} 
                           </Text>
@@ -95,10 +100,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
                           <Text style={{ paddingHorizontal: 15 }}>
                            $ {item.price}
                           </Text>
-                        </TouchableOpacity>
-
-                        
-                             
+                        </TouchableOpacity>      
                       </View>
                     );
                   }
@@ -109,4 +111,4 @@ import { TouchableOpacity } from "react-native-gesture-handler";
       );
     }
   }
-              
+           

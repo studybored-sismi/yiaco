@@ -16,27 +16,26 @@ const ProductScreen = () => {
     const [Search, setSearch] = useState('');
 
     const [product, setProduct] = useState([
-        { name: 'Thermometer', image: require("../assets/thermometer.jpg"),price:'$ 250',description:'A thermometer is a device that measures temperature or a temperature gradient (the degree of hotness or coldness of an object).', id: '1' },
-        { name: 'Pen Knife ', image: require("../assets/pen_knifes.jpeg"),price:'$ 150',description:'A scalpel, or lancet, or bistoury, is a small and extremely sharp bladed instrument used for surgery, anatomical dissection, podiatry and various arts and crafts (called a hobby knife).', id: '2' },
-        { name: 'Sthethescope', image: require("../assets/sthethescope.jpg"),price:'$ 275', description:'The stethoscope is an acoustic medical device for auscultation, or listening to internal sounds of an animal or human body.',id: '3' },
-        { name: 'Artery Foreceps', image: require("../assets/artery_foreceps.jpg"),price:'$ 375',description:'Artery forceps are used to compress an artery to stem bleeding, because of this they belong to a group of surgical instruments called hemostats.', id: '4' },
-        { name: 'KN95 Mask', image: require("../assets/KN95_mask.jpeg"),price:'$ 200', description:'The KN95 Respirator Mask is worn to protect the wearer from viruses, bacteria, pollen and other particles',id: '5' },
-        { name: 'Surgical Gloves', image: require("../assets/surgical_gloves.jpg"),price:'$ 90',description:'The primary purpose of surgical gloves is to act as a protective barrier to prevent the possible transmission of diseases between healthcare professionals and patients during surgical procedures. ', id: '6' },
-        { name: 'Walking Crutches', image: require("../assets/walking_crutches.jpg"), price:'$ 270',description:'Crutches are a type of Walking Aids that serve to increase the size of an individuals Base of support.',id: '7' },
-        { name: 'Blood Pressure Monitor', image: require("../assets/bp_monitor.jpg"),price:'$ 90',description:'A sphygmomanometer, also known as a blood pressure monitor, or blood pressure gauge, is a device used to measure blood pressure, composed of an inflatable cuff to collapse and then release the artery under the cuff in a controlled manner, and a mercury or aneroid manometer to measure the pressure.', id: '8' },
-        { name: 'Wheel Chair', image: require("../assets/wheel_chair.jpg"),price:'$ 250', description:'A wheelchair is a chair with wheels, used when walking is difficult or impossible due to illness, injury, problems related to old age, or disability.',id: '9' },
-        { name: 'Microscope', image: require("../assets/microscope.jpg"), price:'$ 200',description:'A microscope is a laboratory instrument used to examine objects that are too small to be seen by the naked eye.',id: '10' },
-        { name: 'Dental Chair', image: require("../assets/dental_chair.jpg"),price:'$ 400',description:'A dental engine is a large chair-side appliance for use in a dentists office.At minimum, a dental engine serves as a source of mechanical or pneumatic power for one or more handpieces.', id: '11' },
-        { name: 'Hygenic Tools', image: require("../assets/hygenic_tools.jpg"),price:'$ 150',description:'Hygienic design principles cover everything from the materials used to the design of the equipment, with the aim of making them safe when in contact with food, and quicker and easier to clean and dry.', id: '12' },
-        { name: 'Surgical Table', image: require("../assets/surgical_table.jpg"),price:'$ 550',description:'An operating table, sometimes called operating room table, is the table on which the patient lies during a surgical operation.', id: '13' },
-        { name: 'Therapy Equipment', image: require("../assets/therapy_equipment.jpg"),price:'$ 350',description:'Treadmills, exercise bikes, pedal exerciser or elliptical trainer are some of the most common types of physiotherapy equipments used in most of the therapy clinics and hospitals.', id: '14' },
+        { name: 'Golden Ferns', image: require("../assets/Ferns.jpg"),price:'$ 250',description:'Golden Fern is everything you wish for in your Fern – golden green leaves – check; dense, happy perky foliage – check; low maintenance – check; air purifying – check. With beautiful leaves on delicate fronds that grow directly from the soil, the fern is a great addition to any indoor space with sufficient indirect light.', id: '1' },
+        { name: 'Crassula Mini Plant ', image: require("../assets/good.jpg"),price:'$ 150',description:'The Crassula Green Mini will be your dream plant kid. One of the easiest houseplants to look after, the Crassula Green Mini boasts a lush foliage which beautifies any room. Also considered lucky as per Feng Shui for its coin like round plump leaves, so go on, bring some green home, the luck just tags along for free.', id: '2' },
+        { name: 'Spider plant', image: require("../assets/flowering.jpg"),price:'$ 275', description:'Chlorophytum Spider, also the Spider Plant is an impressive houseplant which is the perfect plant for any beginner. A NASA certified air purifier, its long, green foliage with white variegations look good in both hanging planters and as desktop setups. In favourable conditions, it blooms with small white flowers and its pups grow on hanging stems.',id: '3' },
+        { name: 'Christmas Plant', image: require("../assets/christmascactus.jpg"),price:'$ 375',description:'True to their name, these flat leaves succulents bloom right in time for the holiday season and that too profusely. The Christmas cactus is a flat leaved succulent with stunning pink flowers. Easy to grow and highly rewarding, the blooming lasts for several weeks. Even when not in bloom, its leaves are intriguing.', id: '4' },
+        { name: 'kalanchoe red plant', image: require("../assets/kalanchi.jpg"),price:'$ 200', description:'Kalanchoe is your answer. The Kalanchoe Red is a perennial succulent with thick leaves and eye-catching crimson-red flowers that grow in clusters through the year. Easy to grow and care for, the kalanchoe will fill your room with colour without much effort. All that it needs is a patch of sunshine.',id: '5' },
+        { name: 'Poinsettia plant', image: require("../assets/poinsettiane.jpg"),price:'$ 90',description:' The Christmas plant carries all the festive cheer and traditional colours. The Poinsettia Plant instantly lifts up any room it is in and is the best Christmas décor money can buy. Colourful, with bright red leaves surrounding the buds amongst dark green leaves, the Poinsettias are the happiest and brightest in the months of December and January.', id: '6' },
+        { name: 'Aloe Vera Mini Plant', image: require("../assets/alovera.jpg"), price:'$ 270',description:'The mini aloe vera has all the beauty of its bigger sister and none of the space requirements. With its green fleshy leaves that grow from the centre of the leaf cluster, its great addition to tight spaces. An air purifier that is more famous for its medicinal uses, it has been called the ‘plant of eternity’ through civilizations.',id: '7' },
+        { name: 'Syngonium Plant', image: require("../assets/pixie.jpg"),price:'$ 90',description:'The Syngonium Pink Neon is simply the cutest ornamental creeper you will have met. Its adorable pink heart shaped foliage makes him look like an artificial plant. Ideal for both tabletops and floor planters, with proper care, it can grow up to 3 to 6 feet. ', id: '8' },
+        { name: 'Aralia Golden Plant', image: require("../assets/ariy.jpg"),price:'$ 250', description:'Aralia Golden will not only beautify your home and satiate your green thumb, but will also eliminate formaldehyde, benzene, trichloroethylene, and carbon dioxide from your home so that you only breathe pure air and stay healthy and happy. The Aralia Golden plant will also help control the humidity of the room she is in, as a thank you for the love.',id: '9' },
+        { name: 'Boxwood Buxus', image: require("../assets/boxwood.jpg"), price:'$ 200',description:'Boxwood Buxux plant is a landscaper’s favourites. These bushy evergreen plants compliment any plant and are perfect to be used as borders and hedges. They get along with everyone and compliment most plants in your garden. The bright and glossy foliage generally stays stable throughout the year, ensuring that your garden looks happy and healthy year-round.',id: '10' },
+        { name: 'Peperomia Plant', image: require("../assets/peperomiagreen.jpg"),price:'$ 400',description:'The Peperomia Green is a great houseplant. It is low maintenance, looks beautiful AND purifies air. An ornamental succulent with fleshy, thick green leaves that adapts and grows very well in a variety of conditions. If cared for, this one will be by your side for the long run. Add a pop of green to your home by taking home this beauty.', id: '11' },
+        { name: 'Crassula Ovata Plant', image: require("../assets/pg-cras.jpg"),price:'$ 150',description:'The Crassula Ovata, commonly known as the Jade Plant, is an excellent plant featuring waxy, fleshy green leaves that can be grown in both indoor and outdoor spaces. This resilient plant is an easy to grow succulent that is famed to bring luck to your home. It can be pruned to any shape you want. Its low maintenance nature makes it ideal for both homes and offices.', id: '12' },
+        { name: 'Zamia Zz Plant', image: require("../assets/zz.jpg"),price:'$ 550',description:'Topping the list of indestructible houseplants is the Zamioculcas Zamiifolia more popularly known as the ZZ plant. This plant is loved for his easy going and non-demanding nature. The wide, dark, glossy leaves instantly add life to any interior and he will be a happy trooper in the darkest corners of your home.', id: '13' },
+        { name: 'Ficus Plant', image: require("../assets/ficus.jpg"),price:'$ 350',description:'Ficus Microcarpa or the Chinese banyan or Indian Laurel makes for a very good home plant for people looking to dabble in bonsai. It is a hardy houseplant with glossy and oval green leaves and can adjust to a wide range of growing conditions. Plant it in a beautiful shallow pot and prune to shape its growth and the joy of seeing it take shape will be yours.', id: '14' },
     ]);
     return (
        
             <View>
-                <View style={styles.direction}>
-                    <Text style={styles.directionpad}>More To love</Text>
-                </View>
+                
+                
                 <FlatList
                     numColumns={2}
                     keyExtractor={(item) => item.id}
@@ -44,10 +43,11 @@ const ProductScreen = () => {
                     renderItem={({ item }) => (
                         <TouchableOpacity
                             activeOpacity={0.5}
-                            onPress={() => navigation.navigate('medicScreen',{name:item})} >
+                            onPress={() => navigation.navigate('ProductDetailsScreen',{name:item})} >
                             <View style={styles.itemf}>
-                                <Image style={styles.imagef} source={item.image}  />
+                                <Image style={styles.imagef} source={item.image} />
                                 <Text >{item.name}</Text>
+                                <Text>{item.price}</Text>
                             </View>
                         </TouchableOpacity>
 
@@ -230,10 +230,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingVertical: 15,
         paddingHorizontal: 15,
-        marginHorizontal: 20,
+        marginHorizontal: 18,
         marginVertical: 20,
         elevation: 10,
-        width: 150,
+        width: 160,
         alignItems: 'center'
     },
     imagef: {

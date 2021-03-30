@@ -6,50 +6,57 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/FontAwesome';
 
-import Home from './Home';
+import HomeScreen from './HomeScreen';
 import SearchScreen from './SearchScreen';
 import CartScreen from './CartScreen';
 import LoginScreen from './LoginScreen';
+import wishlist from './wishlist';
 
 const Tab = createBottomTabNavigator();
 
 export default function MainScreen() {
     return (
-        <Tab.Navigator initialRouteName="Home" activeColor="#ffa500">
+        <Tab.Navigator initialRouteName="Home" tabBarOptions={{activeTintColor:"green"}}>
             <Tab.Screen
                 name="Home"
-                component={Home}
+                component={HomeScreen}
                 options={{
-                    tabBarColor: '#ffa500',
+                    tabBarColor: 'green',
                     tabBarLabel: 'HOME',
-                    tabBarIcon: ({ color }) => (
+                    
+                    tabBarIcon: ({color}) => (
                         <View>
-                          <Icon name="ios-home" size={15} color={color} />
+                          <Icon name="ios-home" size={15}  color={color} />
                         </View>
+                  
 
                     ),
                 }}
 
             />
-            <Tab.Screen
-                name="Search"
-                component={SearchScreen}
-
+           
+           <Tab.Screen
+                name="Account"
+                component={LoginScreen}
                 options={{
-                    tabBarColor: '#ffa500',
-                    tabBarLabel: 'SEARCH',
-                    tabBarIcon: ({ color }) => (
+
+                    tabBarColor: 'green',
+                    tabBarLabel: 'ACCOUNT',
+                    tabBarIcon: ({ focused, color }) => (
                         <View>
-                            <Icon name="search-outline" size={15} color={color} />
+                            <Icon2 name="user-o" size={15} color={color} />
+
                         </View>
+
                     ),
+
                 }} />
 
             <Tab.Screen
                 name="Cart"
                 component={CartScreen}
                 options={{
-                    tabBarColor: '#ffa500',
+                    tabBarColor: 'green',
                     tabBarLabel: 'CART',
                     tabBarIcon: ({ color }) => (
                         <View>
@@ -57,16 +64,17 @@ export default function MainScreen() {
                         </View>
                     ),
                 }} />
-            <Tab.Screen
-                name="Account"
-                component={LoginScreen}
+         
+         <Tab.Screen
+                name="Wishlist"
+                component={wishlist}
                 options={{
 
-                    tabBarColor: '#ffa500',
-                    tabBarLabel: 'ACCOUNT',
+                    tabBarColor: 'green',
+                    tabBarLabel: 'WISHLIST',
                     tabBarIcon: ({ focused, color }) => (
                         <View>
-                            <Icon2 name="user-o" size={15} color={color} />
+                            <Icon2 name="heart" size={15} color={color} />
 
                         </View>
 

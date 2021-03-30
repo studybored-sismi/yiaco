@@ -11,10 +11,10 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 //import Text from '../component/Text';
 import Navbar from '../src/components/Navbar';
 import {default as ProductComponent} from '../src/components/Product';
+
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();
-
 
 export default class ThermoScreen extends Component{
 
@@ -28,7 +28,7 @@ export default class ThermoScreen extends Component{
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     //get the product with id of this.props.product.id from your server
     this.setState({product: dummyProduct});
   }
@@ -37,27 +37,19 @@ export default class ThermoScreen extends Component{
 
   render() {
     var left = (
-      <Left style={{flex:1, flexDirection:"row"}}>
+      <Left style={{flex:1}}>
         <Button  transparent>
-          <Icon name='ios-arrow-back' style={{color:"#00bfff"}} onPress={() =>
-                            this.props.navigation.navigate("AirScreen")
-                          } />
+          <Icon name='ios-arrow-back' onPress={() => this.props.navigation.navigate("indoorScreen")}  />
         </Button>
-        <View style={{flexDirection:"row"}}>
-        <Image source={require('../assets/logo.jpg')} style={{width:65,height:25,marginTop:10}} />
-        
-        </View>
       </Left>
     );
-
     var right = (
       <Right style={{flex:1}}>
-
         <Button  transparent>
-          <Icon name='ios-search-outline' style={{color:"#00bfff"}} />
+          <Icon name='ios-search-outline' onPress={() => this.props.navigation.navigate("SearchScreen")}/>
         </Button>
-      <Button  transparent>
-          <Icon name='ios-cart' style={{color:"#00bfff"}} onPress={() => this.props.navigation.navigate("CartScreen")}/>
+        <Button   transparent>
+          <Icon name='ios-cart' onPress={() => this.props.navigation.navigate("CartScreen")} />
         </Button>
       </Right>
     );
@@ -105,7 +97,7 @@ export default class ThermoScreen extends Component{
           <View style={{backgroundColor: '#fdfdfd', paddingTop: 10, paddingBottom: 10, paddingLeft: 12, paddingRight: 12, alignItems: 'center'}}>
             <Grid>
               <Col size={3}>
-                <Text style={{fontSize: 18,marginBottom:20}}>{this.state.product.title}</Text>
+                <Text style={{fontSize: 18,marginBottom:15}}>{this.state.product.title}</Text>
               </Col>
               <Col>
                 <Text style={{fontSize: 20, fontWeight: 'bold',paddingLeft:35}}>{this.state.product.price}</Text>
@@ -115,35 +107,35 @@ export default class ThermoScreen extends Component{
           
             <Grid>
               <Col>
-                <View style={{flex: 1, justifyContent: 'center',marginTop:10}}>
+                <View style={{flex: 1, justifyContent: 'center'}}>
                   <Text>Quantity:</Text>
                 </View>
               </Col>
               <Col size={3}>
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                  <Button style={{flex: 1}} icon light onPress={() => this.setState({quantity: this.state.quantity>1 ? this.state.quantity-1 : 1})} >
-                    <Icon name='ios-remove-outline' />
+                <View style={{flex: 1, flexDirection: 'row',color:"green"}}>
+                <Button color="white" icon light  onPress={() => this.setState({ quantity: this.state.quantity > 1 ? this.state.quantity - 1 : 1 })} >
+                    <Icon name='ios-remove-outline' size={10} color="black" />
                   </Button>
                   <View 
                   style={{flex: 4,
-                   justifyContent: 'center', alignItems: 'center', paddingLeft: 30, paddingRight: 30}}>
+                   justifyContent: 'center', alignItems: 'center', paddingLeft: 0, paddingRight: 20,paddingTop:10}}>
                     <Text style={{fontSize: 18}}>{this.state.quantity}</Text>
                   </View>
-                  <Button style={{flex: 1}} icon light onPress={() => this.setState({quantity: this.state.quantity+1})}>
-                    <Icon name='ios-add' />
+                  <Button icon light onPress={() => this.setState({ quantity: this.state.quantity + 1 })}>
+                    <Icon name='ios-add' size={10} color="black" />
                   </Button>
                 </View>
               </Col>
             </Grid>
             <Grid style={{marginTop: 15}}>
               <Col size={3}>
-                <Button block onPress={this.addToCart.bind(this)} style={{backgroundColor: "#00bfff"}}>
+                <Button block onPress={this.addToCart.bind(this)} style={{backgroundColor: "green"}}>
                   <Text style={{color: "#fdfdfd", marginLeft: 5}}>Add to cart</Text>
                 </Button>
               </Col>
               <Col>
               <Button block onPress={this.addToWishlist.bind(this)} icon transparent style={{backgroundColor: '#fdfdfd'}}>
-                
+                <Icon style={{color: "green"}} name='ios-heart' />
               </Button>
               </Col>
             </Grid>
@@ -165,7 +157,7 @@ export default class ThermoScreen extends Component{
   renderImages({item, index}) {
     return (
       <TouchableWithoutFeedback key={index} onPress={() => this.openGallery(index)}>
-        <Image source={require('../assets/thermometer.jpg')} style={{width:350,height:200,resizeMode:"contain",marginTop:20,marginBottom:10}} resizeMode="cover"/>
+        <Image source={require("../assets/good.jpg")} style={{width: Dimensions.get('window').width, height: 300}} resizeMode="cover"/>
       </TouchableWithoutFeedback>
     );
   }
@@ -199,9 +191,7 @@ export default class ThermoScreen extends Component{
         type: 'success',
         buttonText: 'Dismiss',
         duration: 3000,
-        style: {
-            backgroundColor: "#00bfff"
-          }
+        
       });
     });
   }
@@ -227,7 +217,8 @@ export default class ThermoScreen extends Component{
           position: 'bottom',
           type: 'success',
           buttonText: 'Dismiss',
-          duration: 3000
+          duration: 3000,
+          color:"blue"
         });
       }
       else {
@@ -253,19 +244,24 @@ export default class ThermoScreen extends Component{
 
 const dummyProduct = {
   id: 2,
-  title: 'Thermometer',
-  description:"Thermometers are available at Surgical Holdings for grasping and compressing an artery to control bleeding, typically using handles that can be held in place by a locking mechanism.",
-  image: '',
+  title: 'CRASSULA MINI PLANT ',
+  description: "The Crassula Green Mini will be your dream plant kid. One of the easiest houseplants to look after, the Crassula Green Mini boasts a lush foliage which beautifies any room. Also considered lucky as per Feng Shui for its coin like round plump leaves, so go on, bring some green home, the luck just tags along for free.",
+  image:  'https://media.ugaoo.com/catalog/product/cache/81d2f56800d33f099d2b369affd8e374/c/r/crassulagreenmini_45_1.png',
   images: [
     'http://res.cloudinary.com/atf19/image/upload/c_crop,h_250,w_358,x_150/v1500465309/pexels-photo-206470_nwtgor.jpg',
     'http://res.cloudinary.com/atf19/image/upload/c_crop,h_250,x_226,y_54/v1500465309/pexels-photo-521197_hg8kak.jpg',
     'http://res.cloudinary.com/atf19/image/upload/c_crop,g_face,h_250,x_248/v1500465308/fashion-men-s-individuality-black-and-white-157675_wnctss.jpg',
     'http://res.cloudinary.com/atf19/image/upload/c_crop,h_250/v1500465308/pexels-photo-179909_ddlsmt.jpg'
   ],
-  price: '120$',
+  price: '150$',
 
 
-  category: 'MAN',
+  
  
 };
   
+
+ 
+  
+
+

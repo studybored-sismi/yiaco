@@ -32,7 +32,7 @@ export default class SearchBar extends React.PureComponent {
           autoCapitalize="none"
           autoCorrect={false}
           selectionColor={this.props.selectionColor}
-          underlineColorAndroid={this.props.underlineColorAndroid || "#00bfff"}
+          underlineColorAndroid={this.props.underlineColorAndroid || "green"}
           onSubmitEditing={this._handleSubmit}
           onChangeText={this._handleChangeText}
           style={[styles.searchInput, searchInputStyle]}
@@ -48,7 +48,7 @@ export default class SearchBar extends React.PureComponent {
               background={Touchable.Ripple(this.props.tintColor, true)}
             >
               
-              <Ionicons style={{backgroundColor:"#00bfff", color:"white"}}
+              <Ionicons style={{backgroundColor:"green", color:"white"}}
                 name="md-close"
                 size={25}
                 //color={this.props.tintColor}

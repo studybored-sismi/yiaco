@@ -31,7 +31,6 @@ const IndexScreen = ({ navigation }) => {
     )
 };
 
-export default IndexScreen;
 const styles = StyleSheet.create({
     text: {
         alignSelf: 'center',
@@ -85,3 +84,6 @@ const styles = StyleSheet.create({
     }
 
 });
+
+
+export default IndexScreen;
